@@ -1,0 +1,22 @@
+{
+  "name": "express-api-starter",
+  "version": "1.0.0",
+  "description": "A minimal Express REST API boilerplate with users CRUD, request logging, and health check.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": ["express", "api", "rest", "boilerplate"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
