@@ -4,6 +4,7 @@ const { created, ok } = require("../utils/responses");
 function listProjects(req, res) {
   const projects = projectService.listProjects({
     ownerId: req.query.ownerId,
+    teamId: req.query.teamId,
     status: req.query.status,
   });
 

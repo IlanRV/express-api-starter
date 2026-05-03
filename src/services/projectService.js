@@ -1,5 +1,6 @@
 const { badRequest, notFound } = require("../errors/AppError");
 const projectRepository = require("../repositories/projectRepository");
+const teamRepository = require("../repositories/teamRepository");
 const userRepository = require("../repositories/userRepository");
 const auditService = require("./auditService");
 const { createId } = require("../utils/idFactory");
@@ -27,10 +28,15 @@ function createProject(payload, context) {
     throw badRequest("ownerId must reference an existing user");
   }
 
+  if (input.teamId && !teamRepository.findById(input.teamId)) {
+    throw badRequest("teamId must reference an existing team");
+  }
+
   const project = projectRepository.insert({
     id: createId("prj"),
     name: input.name,
     ownerId: input.ownerId,
+    teamId: input.teamId,
     status: input.status || "active",
     tags: input.tags || [],
     createdAt: new Date().toISOString(),

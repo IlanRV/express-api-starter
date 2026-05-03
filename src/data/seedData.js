@@ -27,6 +27,7 @@ const projects = [
     id: "prj_2001",
     name: "Billing API",
     ownerId: "usr_1001",
+    teamId: "team_4001",
     status: "active",
     tags: ["finance", "api"],
     createdAt: "2026-05-02T10:00:00.000Z",
@@ -35,9 +36,36 @@ const projects = [
     id: "prj_2002",
     name: "Support Dashboard",
     ownerId: "usr_1002",
+    teamId: "team_4002",
     status: "paused",
     tags: ["internal", "dashboard"],
     createdAt: "2026-05-02T11:00:00.000Z",
+  },
+  {
+    id: "prj_2003",
+    name: "Usage Insights",
+    ownerId: "usr_1002",
+    teamId: "team_4001",
+    status: "active",
+    tags: ["analytics", "reporting"],
+    createdAt: "2026-05-02T12:30:00.000Z",
+  },
+];
+
+const teams = [
+  {
+    id: "team_4001",
+    name: "Platform",
+    description: "Owns shared APIs, billing services, and reliability workflows.",
+    memberIds: ["usr_1001", "usr_1002"],
+    createdAt: "2026-05-01T08:00:00.000Z",
+  },
+  {
+    id: "team_4002",
+    name: "Customer Ops",
+    description: "Builds internal support tooling and customer-facing operational dashboards.",
+    memberIds: ["usr_1003"],
+    createdAt: "2026-05-01T08:30:00.000Z",
   },
 ];
 
@@ -60,4 +88,4 @@ const auditEvents = [
   },
 ];
 
-module.exports = { users, projects, auditEvents };
+module.exports = { users, projects, teams, auditEvents };

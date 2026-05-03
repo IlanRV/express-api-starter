@@ -1,11 +1,10 @@
 const { auditEvents } = require("../data/seedData");
+const { sortByDateDesc } = require("../utils/collections");
 
 const events = [...auditEvents];
 
 function findMany({ limit }) {
-  return [...events]
-    .sort((left, right) => right.timestamp.localeCompare(left.timestamp))
-    .slice(0, limit);
+  return sortByDateDesc(events, "timestamp").slice(0, limit);
 }
 
 function insert(event) {

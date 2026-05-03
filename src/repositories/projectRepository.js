@@ -12,6 +12,10 @@ function findMany(filters = {}) {
       return false;
     }
 
+    if (filters.teamId && project.teamId !== filters.teamId) {
+      return false;
+    }
+
     return true;
   });
 }

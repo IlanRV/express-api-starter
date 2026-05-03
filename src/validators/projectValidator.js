@@ -17,6 +17,10 @@ function validateProject(payload) {
     errors.push("ownerId is required");
   }
 
+  if (payload.teamId !== undefined && typeof payload.teamId !== "string") {
+    errors.push("teamId must be a string when provided");
+  }
+
   if (payload.status && !projectStatuses.has(payload.status)) {
     errors.push("status must be active, paused, or archived");
   }
@@ -32,6 +36,7 @@ function validateProject(payload) {
   return {
     name: payload.name.trim(),
     ownerId: payload.ownerId.trim(),
+    teamId: payload.teamId?.trim(),
     status: payload.status,
     tags: payload.tags,
   };

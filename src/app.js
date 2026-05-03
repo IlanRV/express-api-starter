@@ -4,6 +4,7 @@ const cors = require("cors");
 const routes = require("./routes");
 const requestContext = require("./middleware/requestContext");
 const requestLogger = require("./middleware/requestLogger");
+const rateLimit = require("./middleware/rateLimit");
 const notFound = require("./middleware/notFound");
 const errorHandler = require("./middleware/errorHandler");
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 app.use(requestContext);
 app.use(requestLogger);
+app.use(rateLimit({ windowMs: 60_000, maxRequests: 300 }));
 
 app.use("/api", routes);
 

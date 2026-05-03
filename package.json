@@ -1,13 +1,13 @@
 {
   "name": "express-api-starter",
   "version": "1.0.0",
-  "description": "A minimal Express REST API boilerplate with users CRUD, request logging, and health check.",
+  "description": "A layered Express REST API demo with users, projects, teams, audit events, metrics, validation, and service/repository boundaries.",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "keywords": ["express", "api", "rest", "boilerplate"],
+  "keywords": ["express", "api", "rest", "boilerplate", "architecture", "demo", "service-layer"],
   "license": "MIT",
   "engines": {
     "node": ">=18"
